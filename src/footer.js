@@ -1,13 +1,15 @@
 import React from 'react'
 
-const CartFooter = () => {
+
+class CartFooter extends React.Component{
+  render(){
   return (
     <div>
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">&copy; 2018</a>
+        <a className="navbar-brand" href="#">&copy; {this.props.copyright}</a>
       </nav>
     </div>
-  )
+  )}
 }
 
 export default CartFooter
