@@ -2,37 +2,39 @@ import React, {Component} from 'react'
 
 class AddItem extends Component {
 
-  state = {}
+  constructor(props){
+    super(props)
+    this.state = {}
+    console.log(this.props);
+  }
 
-onSubmit = (e) => {
-  e.preventDefault()
-}
+
+
+
   render(){
 
     return(
-      <form onSubmit= {this.onSubmit}>
+      <form onSubmit= {(e)=> this.props.submitForm(e,this.state.quantity, this.state.products)}>
         <p>
           <label>
-            Quantity: <input type="number" onChange=  {(e) => this.setState ({quantity: e.taget.value})} name="quantity" />
+            Quantity: <input type="text" onChange=  {(e) => this.setState ({quantity: e.target.value})} name="quantity" />
           </label>
         </p>
         <p>
           <label>
-            Products: <select name=
-            {this.props.products.map(ele=>
-                <option key = {ele.id}/>
-                {ele.name}</option>
-              )}></select>
+            Products: <select name= "newProducts" onChange= {(e) => this.setState ({products: e.target.value})}
+            >{this.props.products.map(ele=>
+                <option key = {ele.id}>{ele.name}</option>
+              )}</select>
 
 
           </label>
         </p>
           <label>
-            <input type="submit" value="Submit" />
+            submit: <input type = "submit"  value="Submit" />
           </label>
       </form>
     )
-
   }
 
 }
