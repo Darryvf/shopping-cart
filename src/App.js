@@ -48,7 +48,7 @@ class App extends Component {
       <div>
         < CartHeader />
         < CartItems  cartList= {this.state.cartItemsList} />
-        < AddItem products = {this.state.products} submitForm= {this.submitForm} />
+        < AddItem products = {this.state.products} submitForm=        {this.submitForm} />
         < CartFooter copyright = '2016'/>
       </div>
     );

@@ -23,6 +23,17 @@ const CartItems = (props) => {
                   })
           }
       </div>
+      <div>
+      <h2>Total Price:
+  
+          {
+            props.cartList.reduce (
+            (accumulator, currentValue) => accumulator + currentValue.product.priceInCents )
+         }
+      </h2>
+
+
+      </div>
     </div>
   )
 }
